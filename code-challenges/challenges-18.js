@@ -45,31 +45,26 @@ const wordLength = (str) => {
 // Input: "cat", "rat"
 // Output: false
 
-const wordLetters = (str1, str2) => {
-    // write your code here
-    //let a = getString(str1[0])
-    //let b =getString(str2[0])
-    let str="";
-    let count=0;
-
-    for (let i=0 ;i< str1.length-1 ;i++){
-        for ( let c=0 ;c<str2.length-1 ;c++)
-        {
-            if (str1[i]==str2[c])
-            {
-                str[count]==str1[i];
-                count++;
-            }
-            else{
-                continue
-            }
-
-        }
+const  wordLetters=  (str1, str2)=> {
+    // Check if the two strings have the same length
+    if (str1.length !== str2.length) {
+      return false;
     }
-    if (str===str1)
-        return true;
-        else return false;
-}
+    
+    // Convert each string to an array of characters and sort them
+    const arr1 = str1.split('').sort();
+    const arr2 = str2.split('').sort();
+    
+    // Compare the sorted arrays
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return false;
+      }
+    }
+    
+    // If all characters match, return true
+    return true;
+  }
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
