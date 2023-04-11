@@ -47,29 +47,29 @@ const wordLength = (str) => {
 
 const wordLetters = (str1, str2) => {
     // write your code here
-    //let a = getString(str1[0])
-    //let b =getString(str2[0])
-    let str="";
-    let count=0;
-
-    for (let i=0 ;i< str1.length-1 ;i++){
-        for ( let c=0 ;c<str2.length-1 ;c++)
-        {
-            if (str1[i]==str2[c])
-            {
-                str[count]==str1[i];
-                count++;
+      const arr1 = str1.split('');  
+      const arr2 = str2.split('');
+     if (arr1.length != arr2.length) {
+         return false
+         }    
+         else {       
+          for (let i = 0; i < arr2.length; i++) {                
+            if (arr1[i] == arr2[i]) {                   
+                 arr1.splice(0, i + 1);                    
+                 arr2.splice(0, i + 1);                    
+                 break;                
+                }                
+                else { continue; }            
+            }        
+        }        
+        if (arr2.length == 0) {
+             return true
+             }        
+             else {
+                 return false; 
+                }    
             }
-            else{
-                continue
-            }
-
-        }
-    }
-    if (str===str1)
-        return true;
-        else return false;
-}
+    
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
